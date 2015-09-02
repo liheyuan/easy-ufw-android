@@ -14,8 +14,7 @@ import com.coder4.easyufwandroid.fragment.NavigationDrawerFragment;
 
 import de.greenrobot.event.EventBus;
 
-public class HomeActivity extends AppCompatActivity implements
-        NavigationDrawerFragment.OnFragmentInteractionListener {
+public class HomeActivity extends AppCompatActivity {
 
     NavigationDrawerFragment navigationDrawerFragment;
 
@@ -64,10 +63,5 @@ public class HomeActivity extends AppCompatActivity implements
 
     public void onEventMainThread(NavigationDrawerClickEvent event) {
         Toast.makeText(this, event.getPosition() + " clicked", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }
