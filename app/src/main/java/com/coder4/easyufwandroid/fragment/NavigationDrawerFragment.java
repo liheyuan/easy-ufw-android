@@ -1,4 +1,4 @@
-package com.coder4.easyufwandroid;
+package com.coder4.easyufwandroid.fragment;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.coder4.easyufwandroid.R;
 import com.coder4.easyufwandroid.adapter.NavigationDrawerAdapter;
 
 

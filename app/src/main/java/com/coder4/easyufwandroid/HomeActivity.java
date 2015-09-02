@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.coder4.easyufwandroid.fragment.NavigationDrawerFragment;
+
 public class HomeActivity extends AppCompatActivity implements NavigationDrawerFragment.OnFragmentInteractionListener {
 
     @Override

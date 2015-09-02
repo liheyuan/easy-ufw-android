@@ -15,7 +15,7 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="com.coder4.easyufwandroid.NavigationDrawerFragment"
+        android:name="com.coder4.easyufwandroid.fragment.NavigationDrawerFragment"
     />
     
 </android.support.v4.widget.DrawerLayout>
