@@ -1,12 +1,17 @@
 package com.coder4.easyufwandroid;
 
+import android.app.usage.UsageEvents;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.coder4.easyufwandroid.event.NavigationDrawerClickEvent;
 import com.coder4.easyufwandroid.fragment.NavigationDrawerFragment;
+
+import de.greenrobot.event.EventBus;
 
 public class HomeActivity extends AppCompatActivity implements NavigationDrawerFragment.OnFragmentInteractionListener {
 
@@ -14,6 +19,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationDrawerF
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // register event bus
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -35,6 +43,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationDrawerF
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // unregister event bus
+        EventBus.getDefault().unregister(this);
+    }
+
+    public void onEventMainThread(NavigationDrawerClickEvent event){
+        Toast.makeText(this, event.getPosition() + " clicked", Toast.LENGTH_LONG).show();
     }
 
     @Override

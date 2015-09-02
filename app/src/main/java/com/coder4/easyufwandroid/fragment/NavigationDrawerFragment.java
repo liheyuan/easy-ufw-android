@@ -7,10 +7,14 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.coder4.easyufwandroid.R;
 import com.coder4.easyufwandroid.adapter.NavigationDrawerAdapter;
+import com.coder4.easyufwandroid.event.NavigationDrawerClickEvent;
+
+import de.greenrobot.event.EventBus;
 
 
 /**
@@ -71,7 +75,12 @@ public class NavigationDrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         drawerListView = (ListView)inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
-
+        drawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EventBus.getDefault().post(new NavigationDrawerClickEvent(position));
+            }
+        });
         drawerListView.setAdapter(new NavigationDrawerAdapter(getActivity()));
 
         return drawerListView;
