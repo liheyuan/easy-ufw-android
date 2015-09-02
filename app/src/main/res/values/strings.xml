@@ -13,4 +13,7 @@
         <item>用户</item>
         <item>关于</item>
     </string-array>
+
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
 </resources>
