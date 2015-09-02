@@ -1,14 +1,11 @@
-package com.coder4.easyufwandroid;
+package com.coder4.easyufwandroid.activity;
 
-import android.app.usage.UsageEvents;
-import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.coder4.easyufwandroid.R;
 import com.coder4.easyufwandroid.event.NavigationDrawerClickEvent;
 import com.coder4.easyufwandroid.fragment.NavigationDrawerFragment;
 
@@ -33,27 +30,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        // noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
 
@@ -61,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
+    // Response when Click on NavigationDrawer
     public void onEventMainThread(NavigationDrawerClickEvent event) {
         Toast.makeText(this, event.getPosition() + " clicked", Toast.LENGTH_LONG).show();
     }

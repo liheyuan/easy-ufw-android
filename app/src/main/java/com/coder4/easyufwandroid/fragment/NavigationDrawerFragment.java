@@ -24,10 +24,10 @@ import de.greenrobot.event.EventBus;
  */
 public class NavigationDrawerFragment extends Fragment {
 
-    private View containerView;
 
     private ListView drawerListView;
 
+    private View containerView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
 
@@ -35,9 +35,9 @@ public class NavigationDrawerFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public void setUpDrawer(int fragmentId, DrawerLayout dl) {
+    public void setUpDrawer(int containerFragmentId, DrawerLayout dl) {
         // container view
-        containerView = getActivity().findViewById(fragmentId);
+        containerView = getActivity().findViewById(containerFragmentId);
         // drawer layout
         drawerLayout = dl;
 
@@ -57,13 +57,6 @@ public class NavigationDrawerFragment extends Fragment {
             }
         };
         drawerLayout.setDrawerListener(drawerToggle);
-
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
     }
 

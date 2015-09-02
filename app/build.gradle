@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:design:22.2.1'
 
     compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.mcxiaoke.volley:library:1.0.+'
 }
